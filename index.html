@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Steal a Brainrots | Sammy's Shop</title>
+<style>
+:root{--green:#48ff42;--green2:#19d719;--bg:#05090d;--panel:#0b131b;--line:#1c3d46;--muted:#a9bac4;--white:#f5fbff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% 0%,#12302a 0,#071017 38%,#030609 100%);color:var(--white);font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+a{color:inherit}.topbar{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px max(5%,calc((100% - 1200px)/2));background:#03070bed;border-bottom:1px solid #214039;backdrop-filter:blur(12px)}
+.logo{font-weight:1000;letter-spacing:-1px;font-size:20px}.logo span{color:var(--green)}nav{display:flex;gap:18px;align-items:center;font-size:14px;font-weight:750}nav a{text-decoration:none;color:#d8e7ec}nav a:hover{color:var(--green)}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;padding:12px 18px;border-radius:12px;background:var(--green);color:#061006;font-weight:900;text-decoration:none;border:0;cursor:pointer;box-shadow:0 0 24px #48ff4222}.btn:hover{background:#8aff7f;transform:translateY(-1px)}.btn.secondary{background:#101d24;color:white;border:1px solid #31505b;box-shadow:none}
+.hero{max-width:1200px;margin:auto;padding:76px 22px 58px;display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:center;min-height:410px}
+.eyebrow{display:inline-block;border:1px solid #2d6840;color:var(--green);background:#0c2418;padding:7px 11px;border-radius:99px;font-size:12px;font-weight:900;letter-spacing:1.3px}
+h1{font-size:clamp(42px,7vw,78px);line-height:.94;letter-spacing:-3px;margin:18px 0}h1 span{color:var(--green);text-shadow:0 0 35px #48ff4233}.hero p{color:#c0d0d7;line-height:1.7;max-width:590px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.hero-art{position:relative;min-height:300px;border:1px solid #28633f;border-radius:26px;overflow:hidden;background:radial-gradient(circle at 50% 40%,#246d42 0,#0c332a 30%,#08151d 70%);display:flex;align-items:center;justify-content:center;isolation:isolate}
+.hero-art:before,.hero-art:after{content:"";position:absolute;border:1px solid #51ff4638;border-radius:50%;width:270px;height:270px;transform:rotate(-24deg);z-index:-1}.hero-art:after{width:350px;height:350px}
+.big-brain{font-size:clamp(100px,17vw,180px);filter:drop-shadow(0 0 30px #48ff4266);animation:float 4s ease-in-out infinite}
+.floating{position:absolute;background:#07100de8;border:1px solid #326641;padding:10px 13px;border-radius:12px;font-size:12px;font-weight:800}.floating strong{color:var(--green);display:block;font-size:14px}.f1{top:20px;left:18px}.f2{bottom:20px;right:18px}
+@keyframes float{50%{transform:translateY(-9px) rotate(3deg)}}
+.section{max-width:1200px;margin:auto;padding:26px 22px 55px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:22px}.section h2{font-size:30px;margin:0 0 7px}.sub{color:var(--muted);margin:0}.notice{border:1px solid #725c20;background:#211c0a;color:#f9e7a2;padding:12px 15px;border-radius:12px;margin:0 0 22px;font-size:13px;line-height:1.5}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{background:linear-gradient(160deg,#0e1a23,#071016);border:1px solid #24505a;border-radius:18px;padding:14px;position:relative;overflow:hidden}.card:hover{border-color:var(--green);box-shadow:0 10px 40px #48ff4212}.art{height:155px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:86px;background:radial-gradient(circle at 50% 40%,#1d513e,#0a1922 68%);border:1px solid #23473d;margin-bottom:14px;position:relative}.art:after{content:"";position:absolute;inset:12px;border:1px dashed #4cff452b;border-radius:10px}.tag{position:absolute;top:12px;left:12px;background:#101c21;border:1px solid #35515b;border-radius:99px;padding:5px 9px;font-size:11px;font-weight:900}.tag.Legendary{color:#ffe05e;border-color:#7d6920}.tag.Mythic{color:#ff74ff;border-color:#743d76}.tag.Epic{color:#62baff;border-color:#285f8b}.tag.Rare{color:#65ff8c;border-color:#287d43}
+.card h3{margin:0 0 6px;font-size:18px}.earning{color:var(--green);font-weight:900;font-size:14px}.price-row{display:flex;justify-content:space-between;align-items:center;margin:14px 0 12px}.price{font-size:23px;font-weight:1000}.example{font-size:10px;color:#f6dc88;text-transform:uppercase;letter-spacing:.8px}.card .btn{width:100%}
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.how{padding:20px;border:1px solid var(--line);border-radius:16px;background:#09131a}.num{color:var(--green);font-weight:1000;font-size:13px;letter-spacing:1px}.how h3{margin:10px 0 6px}.how p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
+.profile{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;border:1px solid #27543c;background:linear-gradient(120deg,#0c2118,#09131a);border-radius:20px;padding:24px}
+.profile p{color:var(--muted);margin:7px 0 0}.profile strong{color:var(--green)}
+footer{border-top:1px solid #1d333a;color:#8fa4ae;text-align:center;padding:28px 20px;font-size:12px;line-height:1.7}
+.modal-backdrop{position:fixed;inset:0;background:#000c;z-index:30;display:none;align-items:center;justify-content:center;padding:18px}.modal{max-width:460px;width:100%;background:#0b151c;border:1px solid #3b7548;border-radius:20px;padding:24px;box-shadow:0 20px 80px #000}.modal h2{margin-top:0}.modal p{color:#c4d2d8;line-height:1.6}.close{float:right;background:none;border:0;color:white;font-size:24px;cursor:pointer}.cash{font-size:23px;font-weight:1000;color:var(--green);overflow-wrap:anywhere}.fine{font-size:12px;color:#95a8b1}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:48px}.hero-art{min-height:250px}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.how-grid{grid-template-columns:1fr}nav{gap:10px}nav a:nth-child(2),nav a:nth-child(3){display:none}}
+@media(max-width:480px){.grid{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}nav{font-size:12px}.topbar{padding:13px 16px}h1{letter-spacing:-2px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="logo" href="#" style="text-decoration:none">🧠 STEAL A <span>BRAINROTS</span></a>
+  <nav><a href="#shop">Shop</a><a href="#how">How to buy</a><a href="#contact">Contact</a><a class="btn" href="#shop">Browse shop ↓</a></nav>
+</header>
+<main>
+<section class="hero">
+ <div>
+  <span class="eyebrow">SAMMY'S BRAINROT MARKET</span>
+  <h1>FIND YOUR NEXT<br><span>BRAINROT.</span></h1>
+  <p>Browse the collection, check the sample prices, and message before making a trade. Dark mode, neon energy, Brainrot vibes.</p>
+  <div class="hero-actions"><a class="btn" href="#shop">🛒 Browse Brainrots</a><a class="btn secondary" href="#how">How it works</a></div>
+ </div>
+ <div class="hero-art" aria-label="Decorative brainrot-themed artwork">
+  <div class="floating f1">FEATURED DROP<strong>Rare finds ⚡</strong></div>
+  <div class="big-brain">🧠</div>
+  <div class="floating f2">SAMMY'S SHOP<strong>Neon collection</strong></div>
+ </div>
+</section>
+<section class="section" id="shop">
+ <div class="section-head"><div><h2>Featured Brainrots</h2><p class="sub">Sample listings — edit names and prices before publishing.</p></div></div>
+ <div class="notice"><strong>⚠ Example prices only:</strong> These listings are placeholders, not confirmed inventory or offers. Replace them with Brainrots you actually own and prices you choose. Confirm availability and trade details before anyone pays.</div>
+ <div class="grid" id="product-grid"></div>
+</section>
+<section class="section" id="how">
+ <div class="section-head"><div><h2>How to buy</h2><p class="sub">Keep the trade clear and confirm everything first.</p></div></div>
+ <div class="how-grid">
+  <article class="how"><div class="num">STEP 01</div><h3>Choose a listing</h3><p>Pick a Brainrot and message Sammy to confirm the item, final price, and availability.</p></article>
+  <article class="how"><div class="num">STEP 02</div><h3>Confirm payment</h3><p>Cash App: <strong style="color:var(--green)">$bikelifesam954</strong>. Agree on the details first. Never share your password or verification codes.</p></article>
+  <article class="how"><div class="num">STEP 03</div><h3>Arrange the Roblox trade</h3><p>Use the Roblox profile below to find the seller. Confirm the correct item and trade method in Roblox before completing anything.</p></article>
+ </div>
+</section>
+<section class="section" id="contact">
+ <div class="profile">
+  <div><h2 style="margin:0">Trade with Sammy</h2><p>Roblox username: <strong>sammybear1619</strong></p><p>Cash App: <strong>$bikelifesam954</strong></p><p>Contact link currently provided: Roblox profile (not a Discord invite).</p></div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn" href="https://www.roblox.com/users/1905930208/profile" target="_blank" rel="noopener">Open Roblox profile ↗</a><button class="btn secondary" onclick="openCash()">Payment info</button></div>
+ </div>
+ <p class="fine" style="margin-top:12px">Discord: replace the Roblox profile link with a real Discord invite URL if you want customers to join your server.</p>
+</section>
+</main>
+<footer>Fan-made independent shop mockup. Not affiliated with or endorsed by Roblox or the creators of Steal a Brainrot.<br>Prices and inventory are examples until edited. Follow platform rules and use safe, transparent trades.</footer>
+<div class="modal-backdrop" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+ <div class="modal"><button class="close" onclick="closeModal()" aria-label="Close">×</button><h2 id="modal-title">Purchase inquiry</h2><p id="modal-item">Selected listing</p><p>Cash App Cashtag:</p><div class="cash">$bikelifesam954</div><p>Before sending money, confirm the item is available, the final price, and how the Roblox trade will happen. This demo does not process payments or automatically deliver items.</p><a class="btn" href="https://cash.app/$bikelifesam954" target="_blank" rel="noopener">Open Cash App ↗</a> <button class="btn secondary" onclick="closeModal()">Close</button></div>
+</div>
+<script>
+const products = [
+ {name:"Tralalero Tralala",rarity:"Legendary",price:5,icon:"🦈",earn:"Example listing"},
+ {name:"Brr Brr Patapim",rarity:"Mythic",price:10,icon:"🌳",earn:"Example listing"},
+ {name:"Tung Tung Sahur",rarity:"Epic",price:3,icon:"🥁",earn:"Example listing"},
+ {name:"Chimpanzini Bananini",rarity:"Epic",price:4,icon:"🐵",earn:"Example listing"},
+ {name:"Bombardiro Crocodilo",rarity:"Rare",price:2,icon:"🐊",earn:"Example listing"},
+ {name:"La Vacca Saturno Saturnita",rarity:"Rare",price:6,icon:"🐮",earn:"Example listing"}
+];
+const grid=document.getElementById("product-grid");
+products.forEach((p,i)=>{
+ const card=document.createElement("article");card.className="card";
+ card.innerHTML=`<div class="art"><span class="tag ${p.rarity}">${p.rarity}</span><span aria-hidden="true">${p.icon}</span></div><h3>${p.name}</h3><div class="earning">${p.earn}</div><div class="price-row"><span class="price">$${p.price.toFixed(2)}</span><span class="example">Sample price</span></div><button class="btn" onclick="buy(${i})">Buy Now ↗</button>`;
+ grid.appendChild(card);
+});
+function buy(i){document.getElementById("modal-item").textContent=products[i].name+" — example price $"+products[i].price.toFixed(2);document.getElementById("modal").style.display="flex";}
+function openCash(){document.getElementById("modal-item").textContent="Payment details for Sammy's shop";document.getElementById("modal").style.display="flex";}
+function closeModal(){document.getElementById("modal").style.display="none";}
+document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="modal")closeModal()});
+</script>
+</body>
+</html>
